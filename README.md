@@ -1,9 +1,9 @@
 QX：
-https://raw.githubusercontent.com/wm0104/QX-SG/refs/heads/main/kaiping.qxrewrite
+https://raw.githubusercontent.com/wm0104/Module-Rule/refs/heads/main/kaiping.qxrewrite
 
-https://github.com/wm0104/QX-SG/raw/refs/heads/main/Apple.list
+https://github.com/wm0104/Module-Rule/raw/refs/heads/main/Apple.list
 
 SG：
-https://raw.githubusercontent.com/wm0104/QX-SG/refs/heads/main/surge.sgmodule
+https://raw.githubusercontent.com/wm0104Module-Rule/refs/heads/main/surge.sgmodule
 
-https://raw.githubusercontent.com/wm0104/QX-SG/refs/heads/main/Apple.sgmodule
+https://raw.githubusercontent.com/wm0104/Module-Rule/refs/heads/main/Apple.sgmodule
