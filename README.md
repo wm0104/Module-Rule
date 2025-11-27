@@ -1,5 +1,5 @@
 链接：
-https://raw.githubusercontent.com/wm0104/Rules-Modules/refs/heads/main/kaiping.qxrewrite
+https://raw.githubusercontent.com/wm0104/QX-SG/refs/heads/main/kaiping.qxrewrite
 
 
-https://github.com/wm0104/Rules-Modules/raw/refs/heads/main/Apple.list
+https://github.com/wm0104/QX-SG/raw/refs/heads/main/Apple.list
