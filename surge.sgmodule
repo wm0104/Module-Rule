@@ -1,0 +1,45 @@
+#!name=去广告
+#!desc=开屏广告
+#!category=去广告
+
+[Rule]
+# 淘宝
+DOMAIN-SUFFIX,h-adashx.ut.taobao.com,REJECT // 淘宝后台广告
+DOMAIN,heic.alicdn.com,REJECT // 淘宝后台广告
+# 12306
+DOMAIN,ad.12306.cn,DIRECT,extended-matching
+# 美柚广告/推广域名
+DOMAIN-SUFFIX,ad.meiyou.com,REJECT
+DOMAIN-SUFFIX,promote.meiyou.com,REJECT
+DOMAIN-SUFFIX,ad.e.meiyou.com,REJECT
+DOMAIN-SUFFIX,track.meiyou.com,REJECT
+
+[URL Rewrite]
+# 中国广电
+^https?:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage reject header
+# 美柚
+^http:\/\/x\.seeyouyima\.com\/adx\/staticstics\? reject header
+^https:\/\/axxd\.xmseeyouyima\.com\/ad\/ reject header
+^https:\/\/axxd\.xmseeyouyima\.com\/ad_statistics\? reject header
+^https:\/\/axxd\.xmseeyouyima\.com\/v1\/getad\? reject header
+^https:\/\/axxd\.xmseeyouyima\.com\/pregetad\? reject header
+# 淘宝
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome\/ - reject-200
+^https?+:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.tmall\.wireless - reject-200
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-200
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise\/ - reject-200
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get\/ - reject-200
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/ - reject-200
+# > 交管12123
+^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject-200
+^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery - reject-200
+# > 酷安
+coolapk = type=http-response,pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/coolapk.js
+[Map Local]
+
+[Script]
+移除12306开屏广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://kelee.one/Resource/JavaScript/12306/12306_remove_splashscreen_ads.js, requires-body=true
+
+移除12306应用内广告 = type=http-request, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://kelee.one/Resource/JavaScript/12306/12306_remove_ads.js
+[MITM]
+hostname= %APPEND% acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com,app.10099.com.cn,x.seeyouyima.com, axxd.xmseeyouyima.com,ad.12306.cn, mobile.12306.cn,api.coolapk.com
