@@ -1,8 +1,13 @@
-name:电报DC
-description: 电报按DC分流
-dns: {}
-rules:
-- ip_cidr:
-    match: 5.28.192.0/18
-    policy: EU
-    no_resolve: true
+#!name=Apple分流（优化增强版）
+#!desc=AppStore走全球加速，其他Apple服务直连
+#!category=工具
+[Rule]
+[IP-ASN]
+44907,SG,no-resolve
+62014,SG,no-resolve
+59930,US,no-resolve
+62041,EU,no-resolve
+211157,EU,no-resolve
+[IP-CIDR]
+5.28.192.0/18,EU,no-resolve
+109.239.140.0/24,EU,no-resolve
