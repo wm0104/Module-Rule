@@ -1,5 +1,6 @@
 #!name=打断请求
 #!desc=手动打断请求
+#!category=面板模块
 
 [Panel]
 面板手动打断连接 = script-name=面板手动打断连接,update-interval=1
