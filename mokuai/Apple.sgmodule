@@ -1,7 +1,6 @@
 #!name=Apple分流
 #!desc=AppStore下载走代理,其他Apple服务直连(需添加一个全球加速策略组)
-#!category=工具
-
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 [Rule]
 DOMAIN-SUFFIX,apps.apple.com,全球加速
 DOMAIN-SUFFIX,itunes.apple.com,全球加速
