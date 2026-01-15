@@ -1,5 +1,5 @@
-#!name=Apple分流（优化增强版）
-#!desc=AppStore走全球加速，其他Apple服务直连
+#!name=Apple分流
+#!desc=AppStore下载走代理,其他Apple服务直连(需添加一个全球加速策略组)
 #!category=工具
 
 [Rule]
