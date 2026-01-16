@@ -1,7 +1,7 @@
 #!name=telegramDC
 #!desc=telegram按DC分流,默认Proxy
 #!category=工具
-#!arguments=PROXY:Proxy,PROXY:Proxy,PROXY:Proxy
+#!arguments#!arguments=SG:Proxy,US:Proxy,EU:Proxy
 #!arguments-desc=新加坡:SG,美国:US,荷兰:EU
 
 [Rule]
