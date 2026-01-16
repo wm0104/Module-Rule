@@ -1,6 +1,6 @@
 #!name=Apple分流
 #!desc=AppStore下载走代理,其他Apple服务直连
-#!arguments-desc=Proxy
+#!arguments=Proxy:DIRECT
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 [Rule]
 DOMAIN-SUFFIX,apps.apple.com,{{{Proxy}}}
