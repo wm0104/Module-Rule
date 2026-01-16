@@ -1,5 +1,6 @@
 #!name=Apple分流
-#!desc=AppStore下载走代理,其他Apple服务直连(需添加一个全球加速策略组)
+#!desc=AppStore下载走代理,其他Apple服务直连
+#!arguments-desc=Proxy: 选择策略组,默认DIRECT
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 [Rule]
 DOMAIN-SUFFIX,apps.apple.com,{{{Proxy}}}
