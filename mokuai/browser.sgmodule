@@ -1,5 +1,5 @@
-#!name=浏览器(快捷搜索)
-#!desc=浏览器(增强)
+#!name=Safari浏览器增强
+#!desc=不需要更改浏览器引擎默认即可,指令空格加关键词,如谷歌(gg xx)
 #!category=工具
 
 [URL Rewrite]
