@@ -1,6 +1,6 @@
 #!name=Apple分流
-#!desc=AppStore下载走代理,其他Apple服务走直连,参数选择自己的策略组,如果走代理下载慢可能和自己的节点有关系
-#!category=工具
+#!desc=AppStore下载走代理,其他Apple服务走直连,参数选择自己的策略组
+走代理下载慢和节点有关系建议选择网速好一点的节点
 #!arguments=Proxy:DIRECT
 #!arguments-desc=Proxy: 选择策略组,默认DIRECT
 
