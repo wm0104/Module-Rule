@@ -1,9 +1,8 @@
 #!name=Apple分流
-#!desc=AppStore下载走代理,其他Apple服务走直连,参数选择自己的策略组皆可
+#!desc=AppStore下载走代理,其他Apple服务走直连,参数选择策略组
 #!category=工具
 #!arguments=Proxy:DIRECT
 #!arguments-desc=Proxy: 选择策略组,默认DIRECT
-
 [Rule]
 DOMAIN-SUFFIX,apps.apple.com,{{{Proxy}}}
 DOMAIN-SUFFIX,itunes.apple.com,{{{Proxy}}}
