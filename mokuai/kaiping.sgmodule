@@ -2,18 +2,6 @@
 #!desc=开屏广告
 #!category=去广告
 
-[Rule]
-# 淘宝
-DOMAIN-SUFFIX,h-adashx.ut.taobao.com,REJECT // 淘宝后台广告
-DOMAIN,heic.alicdn.com,REJECT // 淘宝后台广告
-# 12306
-host,ad.12306.cn,DIRECT
-# 美柚广告/推广域名
-DOMAIN-SUFFIX,ad.meiyou.com,REJECT
-DOMAIN-SUFFIX,promote.meiyou.com,REJECT
-DOMAIN-SUFFIX,ad.e.meiyou.com,REJECT
-DOMAIN-SUFFIX,track.meiyou.com,REJECT
-
 [URL Rewrite]
 # 中国广电
 ^https?:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage reject header
