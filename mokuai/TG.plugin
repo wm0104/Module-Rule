@@ -1,0 +1,22 @@
+#!name=Telegram分域名地区代理策略
+#!desc=Telegram不同域名分别走新加坡/日本/荷兰代理，精准分流（需提前创建对应策略组）
+#!author=自定义
+#!icon=https://telegram.org/img/t_logo.png
+#!loon_version=3.0+
+#!tag=Telegram,分流,地区代理
+
+[Rule]
+# 新加坡代理策略组（需手动创建命名为 SG_PROXY 的策略组，添加新加坡节点）
+DOMAIN-SUFFIX,t.me,SG_PROXY
+DOMAIN-SUFFIX,telegram.me,SG_PROXY
+DOMAIN,core.telegram.org,SG_PROXY
+
+# 日本代理策略组（需手动创建命名为 JP_PROXY 的策略组，添加日本节点）
+DOMAIN-SUFFIX,telegram.dog,JP_PROXY
+DOMAIN-SUFFIX,telesco.pe,JP_PROXY
+DOMAIN,api.telegram.org,JP_PROXY
+
+# 荷兰代理策略组（需手动创建命名为 NL_PROXY 的策略组，添加荷兰节点）
+DOMAIN-SUFFIX,telegra.ph,NL_PROXY
+DOMAIN-SUFFIX,tdesktop.com,NL_PROXY
+DOMAIN,download.telegram.org,NL_PROXY
