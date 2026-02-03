@@ -1,0 +1,51 @@
+#!name=AppStore走代理其他Apple请求走直连
+#!desc=AppStore下载走指定代理策略组，登录/同步/系统更新等其他Apple请求走直连，支持自定义策略组与开关
+#!author=自定义
+#!homepage=https://github.com
+#!icon=https://developer.apple.com/assets/elements/icons/app-store/app-store-128x128_2x.png
+#!select=proxyGroup,代理,节点池,自动选择,全局代理,tag=选择代理策略组,desc=AppStore下载所用的代理策略组（需提前在Loon中创建对应策略组）
+#!switch=enableProxy,true,tag=启用下载代理,desc=开启后AppStore下载走所选策略组，关闭则全部走直连
+#!system=iOS,iPadOS,macOS,tvOS
+#!system_version=15.0+
+#!loon_version=3.2.1(372)+
+#!tag=分流,Apple,AppStore,代理
+
+[Argument]
+proxyGroup = select,"代理","节点池","自动选择","全局代理",tag=选择代理策略组,desc=选择AppStore下载对应的代理策略组
+enableProxy = switch,true,tag=启用下载代理,desc=开关控制是否让AppStore下载走代理
+
+[General]
+bypass-tun =
+skip-proxy =
+real-ip =
+dns-server =
+
+[Rule]
+# AppStore下载核心域名（根据开关状态匹配策略组/直连）
+- DOMAIN-SUFFIX,apps.apple.com,$persistentStore.read(enableProxy) ? $persistentStore.read(proxyGroup) : DIRECT,tag=AppStore下载
+- DOMAIN-SUFFIX,itunes.apple.com,$persistentStore.read(enableProxy) ? $persistentStore.read(proxyGroup) : DIRECT,tag=AppStore下载
+- DOMAIN-SUFFIX,download.itunes.apple.com,$persistentStore.read(enableProxy) ? $persistentStore.read(proxyGroup) : DIRECT,tag=AppStore下载
+- DOMAIN-SUFFIX,phobos.apple.com,$persistentStore.read(enableProxy) ? $persistentStore.read(proxyGroup) : DIRECT,tag=AppStore下载
+- DOMAIN-SUFFIX,cdn-apple.com,$persistentStore.read(enableProxy) ? $persistentStore.read(proxyGroup) : DIRECT,tag=AppStore下载CDN
+- DOMAIN,gs.apple.com,$persistentStore.read(enableProxy) ? $persistentStore.read(proxyGroup) : DIRECT,tag=下载验证节点
+
+# 其他Apple服务（强制直连，保障功能正常）
+- DOMAIN-SUFFIX,apple.com,DIRECT,tag=Apple核心服务
+- DOMAIN-SUFFIX,appleid.apple.com,DIRECT,tag=AppleID登录
+- DOMAIN-SUFFIX,icloud.com,DIRECT,tag=iCloud同步
+- DOMAIN-SUFFIX,me.com,DIRECT,tag=Apple关联服务
+- DOMAIN-SUFFIX,mzstatic.com,DIRECT,tag=应用资源（非下载）
+- DOMAIN-SUFFIX,push.apple.com,DIRECT,tag=推送服务
+- DOMAIN-SUFFIX,appleapis.com,DIRECT,tag=Apple API服务
+- DOMAIN-SUFFIX,akadns.net,DIRECT,tag=Apple解析
+- DOMAIN-SUFFIX,akamai.net,DIRECT,tag=Apple CDN（非下载）
+- GEOIP,Apple,DIRECT,tag=Apple IP段兜底
+
+[Rewrite]
+
+[Host]
+
+[Script]
+
+[Mitm]
+# 无需解密Apple服务域名，避免影响登录/支付安全
