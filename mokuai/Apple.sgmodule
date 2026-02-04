@@ -27,5 +27,5 @@ DOMAIN-SUFFIX,cdn-apple.com,DIRECT
 IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
 IP-CIDR,143.175.0.0/16,DIRECT,no-resolve
 IP-CIDR,203.0.113.0/24,DIRECT,no-resolve
-PROCESS-NAME,AppStore,全球加速
-PROCESS-NAME,"App Store",全球加速
+PROCESS-NAME,AppStore,{{{Proxy}}}
+PROCESS-NAME,"App Store",{{{Proxy}}}
