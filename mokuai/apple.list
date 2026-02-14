@@ -1,0 +1,14 @@
+# App Store 下载 走代理
+DOMAIN-SUFFIX,appldnld.apple.com,Proxy
+DOMAIN-SUFFIX,apps.apple.com,Proxy
+DOMAIN-SUFFIX,play.apple.com,Proxy
+DOMAIN-SUFFIX,aod.itunes.apple.com,Proxy
+DOMAIN,init.itunes.apple.com,Proxy
+
+# 其余所有苹果服务 直连
+DOMAIN-SUFFIX,apple.com,Direct
+DOMAIN-SUFFIX,icloud.com,Direct
+DOMAIN-SUFFIX,icloud-content.com,Direct
+DOMAIN-SUFFIX,me.com,Direct
+DOMAIN-SUFFIX,apple-cloudkit.com,Direct
+DOMAIN-SUFFIX,cdn-apple.com,Direct
