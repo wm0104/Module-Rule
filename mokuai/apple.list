@@ -1,14 +1,25 @@
-# App Store 下载 走代理
-DOMAIN-SUFFIX,appldnld.apple.com,Proxy
-DOMAIN-SUFFIX,apps.apple.com,Proxy
-DOMAIN-SUFFIX,play.apple.com,Proxy
-DOMAIN-SUFFIX,aod.itunes.apple.com,Proxy
-DOMAIN,init.itunes.apple.com,Proxy
-
-# 其余所有苹果服务 直连
-DOMAIN-SUFFIX,apple.com,Direct
-DOMAIN-SUFFIX,icloud.com,Direct
-DOMAIN-SUFFIX,icloud-content.com,Direct
-DOMAIN-SUFFIX,me.com,Direct
-DOMAIN-SUFFIX,apple-cloudkit.com,Direct
-DOMAIN-SUFFIX,cdn-apple.com,Direct
+DOMAIN-SUFFIX,apps.apple.com,PROXY
+DOMAIN-SUFFIX,itunes.apple.com,PROXY
+DOMAIN-SUFFIX,download.itunes.apple.com,PROXY
+DOMAIN-SUFFIX,phobos.apple.com,PROXY
+DOMAIN-SUFFIX,ax.itunes.apple.com,PROXY
+DOMAIN-SUFFIX,su.itunes.apple.com,PROXY
+DOMAIN-SUFFIX,mzstatic.com,PROXY
+DOMAIN-SUFFIX,appstoreconnect.apple.com,PROXY
+DOMAIN-SUFFIX,apple.com,DIRECT
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,me.com,DIRECT
+DOMAIN-SUFFIX,mac.com,DIRECT
+DOMAIN-SUFFIX,apple-dns.net,DIRECT
+DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
+DOMAIN-SUFFIX,app-analytics.apple.com,DIRECT
+DOMAIN-SUFFIX,music.apple.com,DIRECT
+DOMAIN-SUFFIX,tv.apple.com,DIRECT
+DOMAIN-SUFFIX,imessage.apple.com,DIRECT
+DOMAIN-SUFFIX,applepay-api.apple.com,DIRECT
+DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
+IP-CIDR,143.175.0.0/16,DIRECT,no-resolve
+IP-CIDR,203.0.113.0/24,DIRECT,no-resolve
+PROCESS-NAME,AppStore,PROXY
+PROCESS-NAME,App Store,PROXY
